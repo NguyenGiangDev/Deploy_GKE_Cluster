@@ -3,17 +3,6 @@ variable "project" {
   description = "Tên project trên GCP"
 }
 
-variable "credentials_file" {
-  type        = string
-  description = "Đường dẫn file service account json"
-}
-
-variable "ssh_pub_key_path" {
-  type        = string
-  description = "Đường dẫn file public key SSH"
-}
-
-
 
 variable "machine_type" {
   type        = string

@@ -1,6 +1,4 @@
-project           = "devops-group22"
-credentials_file  = "~/.ssh/devops-group22-f7026c17c139.json"
-ssh_pub_key_path  = "~/.ssh/my_gcp_key.pub"
+project           = "Project-UIT-ELK"
 
 
 machine_type      = "e2-medium"
