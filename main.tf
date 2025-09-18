@@ -51,9 +51,9 @@ resource "google_container_cluster" "primary" {
 # =========================
 resource "google_container_node_pool" "primary_nodes" {
   name       = "node-pool"
-  location   = "us-central1"
+  location   = "us-central1-a"
   cluster    = google_container_cluster.primary.name
-  node_count = 6
+  node_count = 5
 
   node_config {
     machine_type = var.machine_type
