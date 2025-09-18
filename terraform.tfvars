@@ -1,8 +1,8 @@
-project           = "Project-UIT-ELK"
+project           = "project-uit-elk"
 
 
 machine_type      = "e2-medium"
-disk_image        = "ubuntu-2004-focal-v20250408"
+disk_image        = "ubuntu-2204-jammy-v20250826"
 disk_size         = 10
 
 public_subnets = {
