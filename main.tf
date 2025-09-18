@@ -35,16 +35,20 @@ resource "google_container_cluster" "primary" {
   name     = "devops-gke-cluster"
   location = "us-central1"
 
-  # Gán VPC + public subnet (chọn subnet ở region us-central1)
+  # Gán VPC + public subnet
   network    = google_compute_network.custom_vpc.id
   subnetwork = google_compute_subnetwork.public_subnets["us-central1"].name
 
-  remove_default_node_pool = true
-  initial_node_count       = 1
+  # Bật Autopilot mode
+  enable_autopilot = true
+
+  # Không cần remove_default_node_pool, Autopilot tự quản lý node
+  # remove_default_node_pool = true
 
   networking_mode = "VPC_NATIVE"
   ip_allocation_policy {}
 }
+
 
 # =========================
 # Node Pool
@@ -53,7 +57,7 @@ resource "google_container_node_pool" "primary_nodes" {
   name       = "node-pool"
   location   = "us-central1-a"
   cluster    = google_container_cluster.primary.name
-  node_count = 5
+  node_count = 3
 
   node_config {
     machine_type = var.machine_type
