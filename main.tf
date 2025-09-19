@@ -33,14 +33,13 @@ resource "google_compute_subnetwork" "private_subnets" {
 # =========================
 resource "google_container_cluster" "primary" {
   name     = "devops-gke-cluster"
-  location = "us-central1"
+  location = "us-central1-a"
 
   # Gán VPC + public subnet
   network    = google_compute_network.custom_vpc.id
   subnetwork = google_compute_subnetwork.public_subnets["us-central1"].name
 
-  # Bật Autopilot mode
-  enable_autopilot = true
+
 
   # Không cần remove_default_node_pool, Autopilot tự quản lý node
   # remove_default_node_pool = true
