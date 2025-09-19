@@ -41,8 +41,8 @@ resource "google_container_cluster" "primary" {
 
 
 
-  # Không cần remove_default_node_pool, Autopilot tự quản lý node
-  # remove_default_node_pool = true
+  remove_default_node_pool = true
+  initial_node_count       = 1
 
   networking_mode = "VPC_NATIVE"
   ip_allocation_policy {}
