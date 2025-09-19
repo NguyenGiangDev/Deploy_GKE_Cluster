@@ -67,5 +67,5 @@ variable "aks_node_count" {
 variable "aks_vm_size" {
   description = "VM Size cho node"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_B1ms"
 }
