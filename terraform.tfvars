@@ -11,5 +11,6 @@ private_subnet_prefix = ["10.0.2.0/24"]
 
 aks_cluster_name = "devops-aks"
 aks_dns_prefix   = "devopsaks"
-aks_node_count   = 3
-aks_vm_size      = "Standard_B2s"
+aks_vm_size   = "Standard_B1ms"
+aks_node_count = 3
+
