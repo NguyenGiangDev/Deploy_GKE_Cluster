@@ -1,15 +1,15 @@
-project           = "project-uit-elk"
+location             = "eastus"
+resource_group_name  = "devops-rg"
+vnet_name            = "devops-vnet"
+vnet_address_space   = ["10.0.0.0/16"]
 
+public_subnet_name   = "public-subnet"
+public_subnet_prefix = ["10.0.1.0/24"]
 
-machine_type      = "e2-medium"
-disk_image        = "ubuntu-2204-jammy-v20250826"
-disk_size         = 10
+private_subnet_name  = "private-subnet"
+private_subnet_prefix = ["10.0.2.0/24"]
 
-public_subnets = {
-  "us-central1" = "10.10.0.0/16"
-  
-}
-
-private_subnets = {
-  "asia-southeast1" = "10.20.0.0/16"
-}
+aks_cluster_name = "devops-aks"
+aks_dns_prefix   = "devopsaks"
+aks_node_count   = 3
+aks_vm_size      = "Standard_B2s"
