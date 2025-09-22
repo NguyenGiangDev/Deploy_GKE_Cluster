@@ -61,11 +61,11 @@ variable "aks_dns_prefix" {
 variable "aks_node_count" {
   description = "Số lượng node trong AKS"
   type        = number
-  default     = 3
+  default     = 2
 }
 
 variable "aks_vm_size" {
   description = "VM Size cho node"
   type        = string
-  default     = "Standard_B1ms"
+  default     = "Standard_B2s"
 }
